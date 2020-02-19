@@ -1,0 +1,18 @@
+service: test-exit
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-west-2
+  memorySize: 1024
+  timeout: 10
+  stackTags:
+    product: r-and-d
+
+functions:
+  error:
+    runtime: nodejs12.x
+    handler: handler.errorNull
+  more-info:
+    runtime: nodejs10.x
+    handler: handler.errorMoreInfo
