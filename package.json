@@ -4,14 +4,12 @@
   "description": "Minimal reprodution",
   "main": "index.js",
   "scripts": {
-    "deploy": "sls deploy"
+    "deploy": "sls deploy",
+    "run-locally": "sls invoke local -f errorNode12"
   },
   "author": "psoares-resilient",
   "license": "ISC",
   "devDependencies": {
     "serverless": "^1.64.0"
-  },
-  "dependencies": {
-    "gremlin": "^3.4.5"
   }
 }

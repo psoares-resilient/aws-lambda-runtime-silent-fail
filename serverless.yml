@@ -10,9 +10,9 @@ provider:
     product: r-and-d
 
 functions:
-  error:
+  errorNode12:
     runtime: nodejs12.x
-    handler: handler.errorNull
-  more-info:
+    handler: handler.errorRuntimeNode
+  errorNode10:
     runtime: nodejs10.x
-    handler: handler.errorMoreInfo
+    handler: handler.errorRuntimeNode
