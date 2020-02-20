@@ -28,6 +28,17 @@ module.exports.errorMoreInfo = async () => {
     { ssl: true, connectOnStartup: false }
   );
   console.log("About to open a connection that will fail");
+  // Library opens a never ending promise and process dies completely
+  // tricking lambda into returning OK somehow, even though no response was
+  // explicitly returned (no ok, no error, no nothing)
   await dc.open();
+
+  // This line never gets executed.
   throw new Error("I wish this would fail the lambda");
 };
+
+// This in node should be called when a process is about to exit
+// In regular node runtime, this is logged, inside a lambda this is
+// completely ignored.
+process.on('exit', (args) => console.log({ exit: args }));
+process.on('disconnect', (args) => console.log({ disconnect: args }));
