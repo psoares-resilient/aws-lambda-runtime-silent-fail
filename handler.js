@@ -3,8 +3,8 @@
 // This in node should be called when a process is about to exit
 // In regular node runtime, this is logged, inside a lambda this is
 // completely ignored.
-process.on('exit', (args) => console.log({ exit: args }));
-process.on('disconnect', (args) => console.log({ disconnect: args }));
+process.on("exit", args => console.log("log:", { exit: args }));
+process.on("disconnect", args => console.log("log:", { disconnect: args }));
 
 module.exports.errorRuntimeNode = async () => {
   console.log("About to open a promise that will never resolve/error");

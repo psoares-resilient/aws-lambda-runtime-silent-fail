@@ -9,6 +9,12 @@
   },
   "author": "psoares-resilient",
   "license": "ISC",
+  "keywords": [
+    "aws",
+    "node",
+    "lambda",
+    "promise"
+  ],
   "devDependencies": {
     "serverless": "^1.64.0"
   }
